@@ -1,0 +1,270 @@
+:root{
+  --bg:#ffffff;
+  --panel:#ffffff;
+  --text:#111111;
+  --muted:#5a5a5a;
+  --border:#d9d9d9;
+  --border2:#bdbdbd;
+  --link:#0b57d0;
+  --link2:#0a42a0;
+  --focus:#111111;
+  --folderBack1:#d2a06f;
+  --folderBack2:#b57b4b;
+  --folderFront1:#f3cf9a;
+  --folderFront2:#e4b774;
+  --folderLine: rgba(0,0,0,.22);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  color:var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background: var(--bg);
+}
+
+a{color:var(--link); text-decoration:none}
+a:hover{color:var(--link2); text-decoration:underline}
+
+.siteTitleLink{
+  color: inherit;
+  text-decoration: none;
+}
+.siteTitleLink:hover{
+  text-decoration: none;
+}
+
+.page{min-height:100%}
+
+.siteHeader{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 18px 10px;
+}
+.siteHeader__row{
+  display:flex;
+  align-items:baseline;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.siteTitle{
+  margin:0;
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:.2px;
+  text-align:center;
+  width:100%;
+}
+.nav{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+  width:100%;
+}
+.nav__link{
+  padding:2px 0;
+  border-bottom: 1px solid transparent;
+  color: var(--text);
+}
+.nav__link--active{
+  border-bottom-color: var(--text);
+}
+.nav__link:focus-visible{
+  outline:2px solid var(--focus);
+  outline-offset:3px;
+}
+
+.main{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.toolbar{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+.toolbar:empty{display:none}
+
+.toolgroup{display:flex; gap:8px; flex-wrap:wrap; align-items:center}
+
+.btn{
+  font:inherit;
+  padding:7px 10px;
+  border-radius:8px;
+  border:1px solid var(--border2);
+  background: #fff;
+  cursor:pointer;
+  color: var(--text);
+}
+.btn:hover{background:#f5f5f5}
+.btn:active{transform: translateY(1px)}
+.btn:focus-visible{
+  outline:2px solid var(--focus);
+  outline-offset:3px;
+}
+.btn--danger{
+  border-color:#9a1d1d;
+}
+.btn--primary{
+  border-color: var(--text);
+}
+
+.pageTitle{
+  font-weight:700;
+  margin: 0 0 12px;
+}
+
+.content{
+  padding:6px 0 0;
+}
+
+.desktopArea{
+  position:relative;
+  width:100%;
+  min-height: 520px;
+  height: calc(100vh - 180px);
+  max-height: 760px;
+  background: transparent;
+  overflow: hidden;
+}
+.iconItem{
+  position:absolute;
+  width: 112px;
+  user-select:none;
+  touch-action:none;
+}
+.iconLink{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  padding:10px 8px;
+  border-radius:12px;
+  color:var(--text);
+}
+.iconLink:hover{
+  background: #f4f4f4;
+  text-decoration:none;
+}
+.iconLink:focus-visible{
+  outline:2px solid var(--focus);
+  outline-offset:3px;
+}
+.iconLabel{
+  width:100%;
+  text-align:center;
+  font-size:12px;
+  line-height:1.15;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.macFolder{
+  width: 82px;
+  height: 62px;
+  position:relative;
+  border-radius: 8px;
+  background: var(--folderBack1);
+  border: 1px solid var(--folderLine);
+}
+/* Back tab */
+.macFolder:before{
+  content:"";
+  position:absolute;
+  left:14px;
+  top:-10px;
+  width:38px;
+  height:22px;
+  border-radius: 8px 8px 6px 6px;
+  background: var(--folderBack2);
+  border: 1px solid var(--folderLine);
+  pointer-events:none;
+}
+/* Front folder */
+.macFolder:after{
+  content:"";
+  position:absolute;
+  left:6px;
+  right:6px;
+  top:16px;
+  bottom:6px;
+  border-radius: 8px;
+  background: var(--folderFront1);
+  border: 1px solid rgba(0,0,0,.18);
+  pointer-events:none;
+}
+
+
+@media (max-width: 520px){
+  .desktopArea{height: calc(100vh - 150px)}
+}
+
+.paper{
+  max-width: 72ch;
+  padding: 8px 2px;
+}
+.rule{
+  border:0;
+  border-top:1px solid var(--border);
+  margin:14px 0;
+}
+.small{
+  font-size:12px;
+  color:var(--muted);
+}
+.steps{
+  margin: 0;
+  padding-left: 20px;
+}
+.bullets{
+  margin: 0;
+  padding-left: 18px;
+}
+
+.noteBox{
+  display:grid;
+  gap:8px;
+}
+.noteBox__label{
+  font-weight:700;
+}
+.noteBox__hint{
+  font-size:12px;
+  color:var(--muted);
+}
+textarea.noteBox__ta{
+  width:100%;
+  min-height:160px;
+  resize:vertical;
+  font: 13px/1.35 "Courier New", Courier, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid var(--border2);
+  background: #fff;
+}
+textarea.noteBox__ta:focus{
+  outline:2px solid var(--focus);
+  outline-offset:3px;
+}
+
+.noscript{
+  position:fixed;
+  left:12px;
+  right:12px;
+  bottom:12px;
+  padding:10px 12px;
+  background:#fff;
+  border:1px solid var(--border2);
+  border-radius:10px;
+  font-size:13px;
+}
