@@ -17,5 +17,3 @@ Then open `http://localhost:5173`.
 
 - Home screen shows 26 folders (A–Z) as draggable desktop-style icons.
 - Clicking a letter opens that folder.
-- Folder positions persist in your browser (drag to move).
-- Structure is saved in your browser via `localStorage` (key: `aor.tree.v1`).
